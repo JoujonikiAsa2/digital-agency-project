@@ -1,45 +1,35 @@
-import React from 'react';
-import mask from '../../../assets/home/Mask.png'
-import mask1 from '../../../assets/home/Mask1.png'
-import mask2 from '../../../assets/home/Mask2.png'
-import mask3 from '../../../assets/home/Mask3.png'
-import mask4 from '../../../assets/home/Mask4.png'
+import React, { useEffect, useState } from 'react';
+import Feature from './Feature';
+import Title from '../../../SharedComponents/Title/Title';
 
 const FeaturedProjects = () => {
+
+    const [featuredProject, setFeaturedProject] = useState([])
+
+    useEffect(() => {
+        fetch('./featuredProject.json')
+            .then(res => res.json())
+            .then(data => setFeaturedProject(data))
+    }, [])
+
     return (
         <div>
-            <div className='w-full px-[4vw]  bg-[#D7F5DC] pb-20'>
-                <div className='py-12 space-y-3'>
-                    <h5 className='text-lg font-medium text-[#20B15A]'>Work List</h5>
-                    <p className='text-xl font-medium max-w-sm'>We provide the Perfect Solution to your business growth</p>
-                </div>
+            <div className='w-full px-[4vw]  bg pb-20'>
+                <Title heading="Featured Project" subHeading="We provide the Perfect Solution to your business growth"></Title>
+
                 <div className='flex flex-col justify-center items-center md:flex-row lg:flex-row gap-5'>
-                    <div className='w-[90vw] lg:w-[50vw] space-y-3'>
-                        <img src={mask} alt=""   className='w-full'/>
-                        <p>App Design - June 20, 2022</p>
-                        <h2 className='text-lg font-bold'>App Redesign</h2>
-                    </div>
-                    <div className='w-[90vw] lg:w-[50vw] h-[480px] grid grid-cols-2 gap-8 mb-36'>
-                        <div className='space-y-3 w-full '>
-                            <img src={mask1} alt="" className='w-full h-[10rem]'/>
-                            <p>App Design - June 20, 2022</p>
-                            <h2 className='text-lg font-bold'>Redesign channel website landng page Redesign</h2>
-                        </div>
-                        <div className='space-y-3 w-full'>
-                            <img src={mask2} alt=""  className='w-full h-[10rem]'/>
-                            <p>App Design - June 20, 2022</p>
-                            <h2 className='text-lg font-bold'>Redesign channel website landng page</h2>
-                        </div>
-                        <div className='space-y-3 w-full '>
-                            <img src={mask3} alt=""  className='w-full h-[10rem]'/>
-                            <p>App Design - June 20, 2022</p>
-                            <h2 className='text-lg font-bold'>Redesign channel website landng page</h2>
-                        </div>
-                        <div className='space-y-3 w-full'>
-                            <img src={mask4} alt=""  className='w-full h-[10rem]'/>
-                            <p>App Design - June 20, 2022</p>
-                            <h2 className='text-lg font-bold'>Redesign channel website landng page</h2>
-                        </div>
+                    {
+                        featuredProject.slice(0, 1).map(feature =>
+                            <div className='w-[90vw] lg:w-[50vw] h-full space-y-2'>
+                                <img src={feature.image} alt="" className='w-full' />
+                                <p>{feature.date}</p>
+                                <h2 className='text-lg font-bold'>{feature.title}</h2>
+                            </div>)
+                    }
+                    <div className='w-[90vw] lg:w-[50vw] grid grid-cols-2 gap-8'>
+                        {
+                            featuredProject.slice(1,).map(feature => <Feature key={feature.id} feature={feature}></Feature>)
+                        }
                     </div>
                 </div>
             </div>

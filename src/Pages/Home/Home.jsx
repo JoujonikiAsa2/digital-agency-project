@@ -3,7 +3,6 @@ import Banner from './Components/Banner';
 import WorkList from './Components/WorkList';
 import Stat from './Components/Stat';
 import FeaturedProjects from './Components/FeaturedProjects';
-import Subscribe from './Components/Subscribe';
 
 const Home = () => {
     return (

@@ -12,7 +12,7 @@ const Subscribe = () => {
                     </label>
                     <div className="join relative space-y-3">
                         <input type="text" placeholder="Enter your email here......." className="input input-bordered w-full h-11 rounded-lg" />
-                        <button className="btn btn-sm bg-[#F55F1D] rounded absolute top-[0.46rem] bottom-0 left-[18.2rem] text-white">Subscribe</button>
+                        <button className="btn btn-sm bg-[#F55F1D] rounded absolute -top-[0.35rem] bottom-0 left-[18.2rem] text-white">Subscribe</button>
                     </div>
                 </fieldset>
             </div>

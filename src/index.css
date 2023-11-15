@@ -3,5 +3,4 @@
 @tailwind utilities;
 
 .bg{
-    background: radial-gradient(50% 50% at 50% 50%, #D7F5DC 0%, rgba(255, 255, 255, 0.00) 100%);
-}
+    background: var(--gray-100, #F8F9FC);}
