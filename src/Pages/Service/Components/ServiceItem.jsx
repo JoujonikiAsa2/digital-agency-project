@@ -7,8 +7,8 @@ const ServiceItem = ({ item }) => {
     return (
         <div className='card justify-center items-center p-6 shadow-xl rounded-lg w-[90vw] lg:w-[45vw] md:w-[50vw]'>
             <div className='space-y-3'>
-                <h2 className='text-xl font-semibold'>{title}</h2>
-                <p>{description}</p>
+                <h2 className='text-xl font-semibold '>{title}</h2>
+                <p className='text-[#8B8B8B]'>{description}</p>
             </div>
             <div className='flex justify-center items-center w-[90vw] lg:w-[40vw] md:w-[50vw]'>
                 <div className=''>

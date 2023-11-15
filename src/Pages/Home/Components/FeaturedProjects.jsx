@@ -22,7 +22,7 @@ const FeaturedProjects = () => {
                         featuredProject.slice(0, 1).map(feature =>
                             <div className='w-[90vw] lg:w-[50vw] h-full space-y-2'>
                                 <img src={feature.image} alt="" className='w-full' />
-                                <p>{feature.date}</p>
+                                <p className='text-[#8B8B8B]'>{feature.date}</p>
                                 <h2 className='text-lg font-bold'>{feature.title}</h2>
                             </div>)
                     }
