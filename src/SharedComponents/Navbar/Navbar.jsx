@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="flex-1">
                 <h2 className='text-2xl font-bold text-black'>Design<span className='text-[#F55F1D]'>AGENCY</span></h2>
             </div>
-            <div className="lg:flex justify-between gap-8 text-black hidden">
+            <div className="lg:flex justify-between gap-8 text-black hidden text-xl">
                 <Link to="/">Home</Link>
                 <Link to="/team">Team</Link>
                 <Link to="/service">Service</Link>
