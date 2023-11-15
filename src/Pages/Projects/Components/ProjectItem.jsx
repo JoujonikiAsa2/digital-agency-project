@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ProjectItem = ({item}) => {
-    const { image, title } = team
+    const { image, title } = item
     return (
-        <div className='card w-96 md:w-80 lg:w-96 h-96 rounded-lg shadow-xl'>
-            <img src={image} alt="" className='w-96 md:w-80 h-80 lg:w-96' />
-            <div className='text-xl font-bold text-center'>
+        <div className='card justify-center items-center p-6 shadow-xl rounded-lg w-[90vw] lg:w-[40vw] md:w-[50vw]'>
+            <img src={image} alt="" className='w-full h-80' />
+            <div className='text-xl font-bold text-center py-3'>
                 <h3>{title}</h3>
             </div>
         </div>
